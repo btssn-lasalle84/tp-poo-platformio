@@ -1,0 +1,58 @@
+name: Build PlatformIO
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Setup PlatformIO in PATH
+      - name: Setup PlatformIO
+        uses: n-vr/setup-platformio-action@v1
+
+      # Build the PlatformIO project
+      - name: Build PlatformIO project
+        id: "platformio"
+        continue-on-error: true
+        shell: bash
+        run: |
+            label="platformio"
+            echo "##[set-output name=label;]${label}"
+            pio run
+            res=$?
+            if [ $res -eq 0 ]
+            then
+            retour="passing"
+            color="green"
+            else
+            retour="failing"
+            color="red"
+            fi
+            echo "##[set-output name=status;]${retour}"
+            echo "##[set-output name=color;]${color}"
+
+      - run: |
+            git checkout badge_format || git checkout -b badge_format
+            test -d .github/badges || mkdir -p .github/badges
+
+      - name: badge
+        uses: emibcn/badge-action@v1.2.1
+        with:
+            label: ${{ steps.platformio.outputs.label }}
+            status: ${{ steps.platformio.outputs.status || 'failing' }}
+            color: ${{ steps.platformio.outputs.color || 'red' }}
+            path: ".github/badges/badge_format.svg"
+
+      - name: Commit changes to badge
+        run: |
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add '.github/badges/badge_format.svg'
+            git commit -m "Add/Update badge_format" || exit 0
+            git push -f origin badge_format

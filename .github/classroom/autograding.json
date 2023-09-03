@@ -3,7 +3,7 @@
     {
       "name": "TU-Q1",
       "setup": "",
-      "run": "make test-q1",
+      "run": "pio test -e q1",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -13,7 +13,7 @@
     {
       "name": "TU-Q2",
       "setup": "",
-      "run": "make test-q2",
+      "run": "pio test -e q2",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -23,7 +23,7 @@
     {
       "name": "TU-Q3",
       "setup": "",
-      "run": "make test-q3",
+      "run": "pio test -e q3",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -33,7 +33,7 @@
     {
       "name": "TU-Q4",
       "setup": "",
-      "run": "make test-q4",
+      "run": "pio test -e q4",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -43,7 +43,7 @@
     {
       "name": "TU-Q5",
       "setup": "",
-      "run": "make test-q5",
+      "run": "pio test -e q5",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -53,7 +53,7 @@
     {
       "name": "TU-Q6",
       "setup": "",
-      "run": "make test-q6",
+      "run": "pio test -e q6",
       "input": "",
       "output": "",
       "comparison": "included",
@@ -61,11 +61,11 @@
       "points": 1
     },
     {
-      "name": "TestAffichage",
+      "name": "Build",
       "setup": "",
-      "run": "make test-point",
+      "run": "pio run",
       "input": "",
-      "output": "Question 1 : constructeur par défaut\r\nQuestion 2 : constructeur\r\nQuestion 3 : accesseurs et mutateurs\r\nL'abscisse de p0 est 0\r\nL'abscisse de p1 est 1\r\nL'abscisse de p1 est 4\r\n\r\nL'ordonnée de p0 est 0\r\nL'ordonnée de p1 est 2\r\nL'ordonnée de p1 est 0\r\n\r\nL'abscisse de p0 est maintenant 5.5\r\nL'ordonnée de p0 est maintenant 6.5\r\n\r\nL'abscisse de p3 est 2\r\nL'ordonnée de p3 est 1\r\n\r\nQuestion 6 : objet constant\r\nL'abscisse de p4 est 7\r\nL'ordonnée de p4 est 8\r\n\r\nQuestion 4 : rendre des services\r\np0 = <5.5,6.5>\r\np1 = <1,2>\r\np2 = <4,0>\r\np4 = <7,8>\r\n\r\nQuestion 5 : calcul de la distance entre 2 points\r\nLa distance entre p1 et p2 est de 3.6\r\n\r\nQuestion 6 : calcul le point milieu entre 2 points\r\nLe point milieu entre p1 et p2 est <2.5,1>\r\n",
+      "output": "",
       "comparison": "included",
       "timeout": 10,
       "points": 1
