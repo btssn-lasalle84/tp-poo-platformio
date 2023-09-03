@@ -24,7 +24,7 @@ jobs:
         run: |
             label="platformio"
             echo "##[set-output name=label;]${label}"
-            pio run
+            pio run -e lolin32
             res=$?
             if [ $res -eq 0 ]
             then
