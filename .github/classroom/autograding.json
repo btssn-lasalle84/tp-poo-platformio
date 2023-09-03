@@ -61,9 +61,9 @@
       "points": 1
     },
     {
-      "name": "Build",
+      "name": "Build ESP32",
       "setup": "",
-      "run": "pio run",
+      "run": "pio run -e lolin32",
       "input": "",
       "output": "",
       "comparison": "included",
