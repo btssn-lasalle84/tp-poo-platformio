@@ -60,7 +60,7 @@ void test_unitaire_q5()
     Point p1(1., 2.);
     Point p2(4., 0.);
 
-    double distance = p1.calculeDistance(p2);
+    float distance = p1.calculeDistance(p2);
     TEST_ASSERT_EQUAL_FLOAT(distance, 3.605551275);
 }
 
