@@ -48,7 +48,7 @@
       "output": "",
       "comparison": "included",
       "timeout": 15,
-      "points": 1
+      "points": 2
     },
     {
       "name": "TU-Q6",
@@ -58,7 +58,7 @@
       "output": "",
       "comparison": "included",
       "timeout": 15,
-      "points": 1
+      "points": 2
     },
     {
       "name": "Build ESP32",
@@ -68,7 +68,7 @@
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 1
+      "points": 2
     }
   ]
 }
